@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PackageAnalysis>
+    <Package name="com.ischoolbar.programmer" x="301" y="73"/>
+    <Package name="config" x="1025" y="79"/>
+    <Package name="com.ischoolbar.programmer.controller" x="31" y="133"/>
+    <Package name="com.ischoolbar.programmer.dao.admin" x="466" y="235">
+        <DependencyLink destination="com.ischoolbar.programmer.entity.admin"/>
+    </Package>
+    <Package name="com.ischoolbar.programmer.entity.admin" x="18" y="229"/>
+    <Package name="com.ischoolbar.programmer.interceptor" x="27" y="184"/>
+    <Package name="com.ischoolbar.programmer.page.admin" x="39" y="299"/>
+    <Package name="com.ischoolbar.programmer.service.admin" x="457" y="301">
+        <DependencyLink destination="com.ischoolbar.programmer.entity.admin"/>
+    </Package>
+    <Package name="com.ischoolbar.programmer.util" x="517" y="361">
+        <DependencyLink destination="com.ischoolbar.programmer.entity.admin"/>
+    </Package>
+    <Package name="config.mybatis" x="1126" y="148"/>
+    <Package name="config.spring" x="951" y="215"/>
+    <Package name="config.springmvc" x="1121" y="213"/>
+    <Package name="com.ischoolbar.programmer.controller.admin" x="364" y="469">
+        <DependencyLink destination="com.ischoolbar.programmer.entity.admin"/>
+        <DependencyLink destination="com.ischoolbar.programmer.util"/>
+        <DependencyLink destination="com.ischoolbar.programmer.page.admin"/>
+        <DependencyLink destination="com.ischoolbar.programmer.service.admin"/>
+    </Package>
+    <Package name="com.ischoolbar.programmer.controller.home" x="3" y="416">
+        <DependencyLink destination="com.ischoolbar.programmer.entity.admin"/>
+        <DependencyLink destination="com.ischoolbar.programmer.util"/>
+        <DependencyLink destination="com.ischoolbar.programmer.service.admin"/>
+    </Package>
+    <Package name="com.ischoolbar.programmer.interceptor.admin" x="35" y="534">
+        <DependencyLink destination="com.ischoolbar.programmer.entity.admin"/>
+        <DependencyLink destination="com.ischoolbar.programmer.util"/>
+    </Package>
+    <Package name="com.ischoolbar.programmer.interceptor.home" x="464" y="546"/>
+    <Package name="com.ischoolbar.programmer.service.admin.impl" x="156" y="607">
+        <DependencyLink destination="com.ischoolbar.programmer.dao.admin"/>
+        <DependencyLink destination="com.ischoolbar.programmer.entity.admin"/>
+        <DependencyLink destination="com.ischoolbar.programmer.service.admin"/>
+    </Package>
+    <Package name="com.ischoolbar.programmer.util.dom4jUtil" x="569" y="602"/>
+    <Package name="config.mybatis.mapper.admin" x="843" y="147"/>
+</PackageAnalysis>

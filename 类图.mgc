@@ -1,0 +1,938 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class name="com.ischoolbar.programmer.dao.admin.SubjectDao" x="-28" y="111">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.dao.admin.AuthorityDao"
+        x="960" y="-239">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.entity.admin.Exam" x="2419" y="713">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.interceptor.home.LoginInterceptor"
+        x="281" y="697">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.interceptor.admin.LoginInterceptor"
+        x="1578" y="1185">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.util.MenuUtil"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.service.admin.impl.SubjectServiceImpl"
+        x="54" y="1635">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.ischoolbar.programmer.service.admin.SubjectService"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.dao.admin.SubjectDao"
+            endpointName="subjectDao" kind="Simple"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.dao.admin.SubjectDao"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.service.admin.impl.MenuServiceImpl"
+        x="472" y="1569">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.ischoolbar.programmer.service.admin.MenuService"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.dao.admin.MenuDao"
+            endpointName="menuDao" kind="Simple"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.dao.admin.MenuDao"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.controller.home.HomeStudentController"
+        x="1888" y="545">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.ExamPaperService"
+            endpointName="examPaperService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.ExamPaperAnswerService"
+            endpointName="examPaperAnswerService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.ExamService"
+            endpointName="examService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.SubjectService"
+            endpointName="subjectService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.StudentService"
+            endpointName="studentService" kind="Simple"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.entity.admin.ExamPaper"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.StudentService"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.entity.admin.Student"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.ExamPaperService"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.ExamPaperAnswerService"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.ExamService"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.entity.admin.Question"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.dao.admin.UserDao" x="2098" y="1601">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.controller.admin.UserController"
+        x="84" y="1139">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.RoleService"
+            endpointName="roleService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.UserService"
+            endpointName="userService" kind="Simple"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.UserService"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.entity.admin.User"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.dao.admin.MenuDao" x="1712" y="1567">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.service.admin.impl.LogServiceImpl"
+        x="-80" y="461">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.ischoolbar.programmer.service.admin.LogService"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.dao.admin.LogDao"
+            endpointName="logDao" kind="Simple"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.dao.admin.LogDao"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.entity.admin.Log"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.service.admin.impl.QuestionServiceImpl"
+        x="2196" y="-153">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.ischoolbar.programmer.service.admin.QuestionService"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.dao.admin.QuestionDao"
+            endpointName="questionDao" kind="Simple"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.dao.admin.QuestionDao"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.util.DateFormatUtil" x="1614" y="-249">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.dao.admin.ExamPaperDao"
+        x="1668" y="-185">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.service.admin.SubjectService"
+        x="1194" y="-113">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.util.MenuUtil" x="1810" y="-245">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.entity.admin.Menu"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.entity.admin.Student" x="766" y="-257">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.page.admin.Page" x="1358" y="-247">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.service.admin.impl.ExamPaperAnswerServiceImpl"
+        x="388" y="853">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.ischoolbar.programmer.service.admin.ExamPaperAnswerService"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.dao.admin.ExamPaperAnswerDao"
+            endpointName="examPaperAnswerDao" kind="Simple"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.dao.admin.ExamPaperAnswerDao"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.controller.admin.ExamPaperController"
+        x="744" y="-65">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.ExamPaperService"
+            endpointName="examPaperService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.ExamService"
+            endpointName="examService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.StudentService"
+            endpointName="studentService" kind="Simple"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.entity.admin.ExamPaper"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.ExamPaperService"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.service.admin.ExamPaperAnswerService"
+        x="1188" y="347">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.service.admin.impl.StudentServiceImpl"
+        x="314" y="1325">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.ischoolbar.programmer.service.admin.StudentService"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.dao.admin.StudentDao"
+            endpointName="studentDao" kind="Simple"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.dao.admin.StudentDao"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.service.admin.RoleService"
+        x="870" y="1531">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.dao.admin.StudentDao" x="52" y="1469">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.controller.admin.ExamController"
+        x="813" y="607">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.ExamService"
+            endpointName="examService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.SubjectService"
+            endpointName="subjectService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.QuestionService"
+            endpointName="questionService" kind="Simple"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.entity.admin.Exam"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.QuestionService"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.ExamService"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.controller.admin.StatsController"
+        x="-28" y="17">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.ExamPaperService"
+            endpointName="examPaperService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.ExamService"
+            endpointName="examService" kind="Simple"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.ExamPaperService"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.entity.admin.User" x="412" y="21">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.dao.admin.RoleDao" x="2136" y="1399">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.service.admin.impl.ExamServiceImpl"
+        x="1276" y="1451">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.ischoolbar.programmer.service.admin.ExamService"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.dao.admin.ExamDao"
+            endpointName="examDao" kind="Simple"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.dao.admin.ExamDao"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.entity.admin.Authority"
+        x="1460" y="-247">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.entity.admin.Menu" x="1322" y="1259">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.service.admin.impl.AuthorityServiceImpl"
+        x="1544" y="1083">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.ischoolbar.programmer.service.admin.AuthorityService"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.dao.admin.AuthorityDao"
+            endpointName="authorityDao" kind="Simple"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.dao.admin.AuthorityDao"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.service.admin.StudentService"
+        x="-36" y="1281">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.service.admin.UserService"
+        x="1684" y="1373">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.controller.admin.SystemController"
+        x="-54" y="-229">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.MenuService"
+            endpointName="menuService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.AuthorityService"
+            endpointName="authorityService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.LogService"
+            endpointName="logService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.RoleService"
+            endpointName="roleService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.UserService"
+            endpointName="userService" kind="Simple"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.MenuService"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.LogService"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.UserService"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.RoleService"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.AuthorityService"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.util.CpachaUtil"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.entity.admin.Authority"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.entity.admin.User"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.controller.admin.MenuController"
+        x="-6" y="547">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.MenuService"
+            endpointName="menuService" kind="Simple"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.MenuService"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.entity.admin.Menu"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.dao.admin.ExamDao" x="872" y="1283">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.service.admin.impl.RoleServiceImpl"
+        x="1868" y="1025">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.ischoolbar.programmer.service.admin.RoleService"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.dao.admin.RoleDao"
+            endpointName="roleDao" kind="Simple"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.dao.admin.RoleDao"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.controller.home.HomeExamController"
+        x="604" y="45">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.ExamPaperService"
+            endpointName="examPaperService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.ExamPaperAnswerService"
+            endpointName="examPaperAnswerService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.ExamService"
+            endpointName="examService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.QuestionService"
+            endpointName="questionService" kind="Simple"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.entity.admin.Exam"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.entity.admin.ExamPaper"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.QuestionService"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.entity.admin.ExamPaperAnswer"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.ExamPaperService"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.ExamPaperAnswerService"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.ExamService"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.entity.admin.Question"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.entity.admin.Log" x="2042" y="69">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.controller.admin.LogController"
+        x="800" y="1085">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.LogService"
+            endpointName="logService" kind="Simple"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.LogService"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.entity.admin.Log"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.entity.admin.ExamPaper"
+        x="698" y="1253">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.entity.admin.Exam"
+            endpointName="exam" kind="Simple"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.service.admin.MenuService"
+        x="1462" y="613">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.controller.admin.ExamMarkPaper"
+        x="944" y="705">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.ExamPaperService"
+            endpointName="examPaperService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.ExamPaperAnswerService"
+            endpointName="examPaperAnswerService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.ExamService"
+            endpointName="examService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.StudentService"
+            endpointName="studentService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.QuestionService"
+            endpointName="questionService" kind="Simple"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.entity.admin.ExamPaperAnswer"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.ExamPaperService"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.ExamPaperAnswerService"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.service.admin.LogService"
+        x="1690" y="27">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.entity.admin.Role" x="2074" y="-253">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.controller.admin.StudentController"
+        x="1246" y="75">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.SubjectService"
+            endpointName="subjectService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.StudentService"
+            endpointName="studentService" kind="Simple"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.StudentService"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.entity.admin.Student"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.service.admin.QuestionService"
+        x="14" y="277">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.controller.admin.SubjectController"
+        x="46" y="1011">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.SubjectService"
+            endpointName="subjectService" kind="Simple"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.SubjectService"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.service.admin.ExamService"
+        x="1958" y="811">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.controller.home.HomeController"
+        x="1074" y="211">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.SubjectService"
+            endpointName="subjectService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.StudentService"
+            endpointName="studentService" kind="Simple"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.StudentService"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.entity.admin.Student"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.dao.admin.QuestionDao"
+        x="2120" y="305">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.service.admin.impl.ExamPaperServiceImpl"
+        x="2214" y="79">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.ischoolbar.programmer.service.admin.ExamPaperService"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.dao.admin.ExamPaperDao"
+            endpointName="examPaperDao" kind="Simple"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.dao.admin.ExamPaperDao"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.controller.admin.QuestionController"
+        x="1116" y="1087">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.SubjectService"
+            endpointName="subjectService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.QuestionService"
+            endpointName="questionService" kind="Simple"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.QuestionService"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.util.timeUtil"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.entity.admin.Question"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.service.admin.AuthorityService"
+        x="2264" y="1247">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.util.timeUtil" x="1958" y="-245">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.dao.admin.LogDao" x="1760" y="417">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.controller.admin.RoleController"
+        x="838" y="459">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.MenuService"
+            endpointName="menuService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.AuthorityService"
+            endpointName="authorityService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.RoleService"
+            endpointName="roleService" kind="Simple"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.MenuService"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.RoleService"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.service.admin.AuthorityService"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.entity.admin.Authority"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.controller.admin.ExamPaperAnswerController"
+        x="690" y="1175">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.ExamPaperAnswerService"
+            endpointName="examPaperAnswerService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.ExamService"
+            endpointName="examService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.StudentService"
+            endpointName="studentService" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.service.admin.QuestionService"
+            endpointName="questionService" kind="Simple"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.dao.admin.ExamPaperAnswerDao"
+        x="1382" y="823">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.service.admin.impl.UserServiceImpl"
+        x="2162" y="1025">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="com.ischoolbar.programmer.service.admin.UserService"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.dao.admin.UserDao"
+            endpointName="userDao" kind="Simple"/>
+        <Communication destinationClassName="com.ischoolbar.programmer.dao.admin.UserDao"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.entity.admin.ExamPaperAnswer"
+        x="430" y="473">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.entity.admin.ExamPaper"
+            endpointName="examPaper" kind="Simple"/>
+        <Association
+            destinationClassName="com.ischoolbar.programmer.entity.admin.Question"
+            endpointName="question" kind="Simple"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.entity.admin.Subject" x="238" y="801">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="com.ischoolbar.programmer.service.admin.ExamPaperService"
+        x="1686" y="177">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.entity.admin.Question" x="40" y="663">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="com.ischoolbar.programmer.util.CpachaUtil" x="570" y="189">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+</ClassDiagram>
