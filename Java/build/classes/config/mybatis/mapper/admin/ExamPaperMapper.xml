@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ischoolbar.programmer.dao.admin.ExamPaperDao">
+	<resultMap id="userHistory" type="com.ischoolbar.programmer.entity.admin.ExamPaper">
+		<id column="ep_id" property="id" />
+		<result column="ep_examId" property="examId" />
+		<result column="ep_studentId" property="studentId" />
+		<result column="ep_status" property="status" />
+		<result column="ep_totalScore" property="totalScore" />
+		<result column="ep_score" property="score" />
+		<result column="ep_subScoreTotal" property="subScoreTotal" />
+		<result column="ep_finalScore" property="finalScore" />
+		<result column="ep_startExamTime" property="startExamTime" />
+		<result column="ep_endExamTime" property="endExamTime" />
+		<result column="ep_useTime" property="useTime" />
+		<result column="ep_createTime" property="createTime" />
+		<association property="exam" javaType="com.ischoolbar.programmer.entity.admin.Exam">
+			<id column="e_id" property="id" />
+			<result column="e_name" property="name" />
+			<result column="e_subjectId" property="subjectId" />
+			<result column="e_startTime" property="startTime" />
+			<result column="e_endTime" property="endTime" />
+			<result column="e_avaliableTime" property="avaliableTime" />
+			<result column="e_questionNum" property="questionNum" />
+			<result column="e_totalScore" property="totalScore" />
+			<result column="e_passScore" property="passScore" />
+			<result column="e_singleQuestionNum" property="singleQuestionNum" />
+			<result column="e_muiltQuestionNum" property="muiltQuestionNum" />
+			<result column="e_chargeQuestionNum" property="chargeQuestionNum" />
+			<result column="e_paperNum" property="paperNum" />
+			<result column="e_examedNum" property="examedNum" />
+			<result column="e_passNum" property="singleQuestionNum" />
+			<result column="e_createTime" property="createTime" />
+		</association>
+	</resultMap>
+
+
+	<!-- 试卷插入操作 -->
+	<insert id="add" useGeneratedKeys="true" keyProperty="id"  parameterType="com.ischoolbar.programmer.entity.admin.ExamPaper">
+		insert into examPaper(examId,studentId,status,totalScore,score,createTime,cheat) values(#{examId},#{studentId},#{status},#{totalScore},#{score},#{createTime},0)
+	</insert>
+	<!-- 试卷更新操作 -->
+	<update id="edit" parameterType="com.ischoolbar.programmer.entity.admin.ExamPaper">
+		update examPaper set examId = #{examId},studentId = #{studentId} where id = #{id}
+	</update>
+	<!-- 交卷操作 -->
+	<update id="submitPaper" parameterType="com.ischoolbar.programmer.entity.admin.ExamPaper">
+		update examPaper set status = #{status},score = #{score},startExamTime = #{startExamTime},endExamTime = #{endExamTime},useTime = #{useTime} where id = #{id}
+	</update>
+	<!-- 试卷信息搜索查询 -->
+	<select id="findList" parameterType="Map" resultType="com.ischoolbar.programmer.entity.admin.ExamPaper">
+		select * from examPaper where 1 = 1
+		<if test="examId != null">
+			and examId = #{examId}
+		</if>
+		<if test="studentId != null">
+			and studentId = #{studentId}
+		</if>
+		<if test="status != null">
+			and status = #{status}
+		</if>
+		<if test="offset != null and pageSize != null">
+			limit #{offset},#{pageSize}
+		</if>
+	</select>
+	<!-- 考生试卷信息搜索查询 -->
+	<select id="find" parameterType="Map" resultType="com.ischoolbar.programmer.entity.admin.ExamPaper">
+		select * from examPaper where examId = #{examId} and studentId = #{studentId}
+	</select>
+	<!-- 模糊搜索总条数 -->
+	<select id="getTotal" parameterType="Map" resultType="Integer">
+		select count(*) from examPaper where 1 = 1
+		<if test="examId != null">
+			and examId = #{examId}
+		</if>
+		<if test="studentId != null">
+			and studentId = #{studentId}
+		</if>
+		<if test="status != null">
+			and status = #{status}
+		</if>
+	</select>
+	<!-- 删除试卷信息 -->
+	<delete id="delete" parameterType="Long">
+		delete from examPaper where id =${value}
+	</delete>
+	<!-- 用户查询考过的试卷信息 -->
+	<select id="findHistory" parameterType="Map" resultMap="userHistory">
+		select
+		ep.id as ep_id,ep.examId as ep_examId,ep.studentId as ep_studentId,ep.status as ep_status,
+		ep.totalScore as ep_totalScore,ep.score as ep_score,ep.subScoreTotal as ep_subScoreTotal,ep.finalScore as ep_finalScore,ep.startExamTime as ep_startExamTime,
+		ep.endExamTime as ep_endExamTime,ep.useTime as ep_useTime,ep.createTime as ep_createTime,
+		e.id as e_id,e.name as e_name,e.subjectId as e_subjectId,e.startTime as e_startTime,e.endTime as e_endTime,
+		e.avaliableTime as e_avaliableTime,e.questionNum as e_questionNum,e.totalScore as e_totalScore,
+		e.passScore as e_passScore,e.singleQuestionNum as e_singleQuestionNum,e.muiltQuestionNum as e_muiltQuestionNum,
+		e.chargeQuestionNum as e_chargeQuestionNum,e.paperNum as e_paperNum,e.examedNum as e_examedNum,
+		e.passNum as e_passNum,e.createTime as e_createTime
+		from examPaper ep,exam e where ep.examId = e.id and ep.studentId = #{studentId} and status = 1
+		<if test="name != null">
+			and e.name like '%${name}%'
+		</if>
+		<if test="subjectId != null">
+			and e.subjectId = #{subjectId}
+		</if>
+		order by ep.createTime desc
+		<if test="offset != null and pageSize != null">
+			limit #{offset},#{pageSize}
+		</if>
+	</select>
+	<!-- 模糊搜索总条数 -->
+	<select id="getHistoryTotal" parameterType="Map" resultType="Integer">
+		select count(*) from examPaper ep,exam e where ep.examId = e.id and ep.studentId = #{studentId}
+		<if test="name != null">
+			and e.name like '%${name}%'
+		</if>
+		<if test="subjectId != null">
+			and e.subjectId = #{subjectId}
+		</if>
+	</select>
+
+
+	<!-- 考试信息统计：得分、试卷总分、学生姓名、及格分数线 -->
+	<select id="getExamStats" parameterType="Long" resultType="Map">
+		select ep.finalScore as finalScore,ep.score as score,ep.subScoreTotal as subScoreTotal,ep.totalScore as totalScore,s.trueName as sname,sub.name as subject,e.passScore as passScore,ep.cheat as cheat
+		from examPaper ep,student s,subject sub,exam e
+		where ep.examId = #{value} and ep.studentId = s.id and ep.examId = e.id and sub.id = s.subjectId and finalScore!=""
+		order by finalScore desc
+	</select>
+
+	<!-- 获取学生考试的详细信息 -->
+	<select id="getStuExamDetail" parameterType="Map" resultType="Map">
+		select
+			e.name as ename,
+			s.trueName as sname,
+			e.totalScore as totalScore,
+			e.passScore as passScore,
+			ep.score as score,
+			ep.subScoreTotal as subScore,
+			ep.finalScore as finalScore
+		from
+			exam e, student s, exampaper ep
+		where
+			e.id = #{examId} and s.trueName = #{sname} and ep.examId = e.id and ep.studentId = s.id
+	</select>
+
+	<!-- 获取考试的统计信息 -->
+	<select id="getExamCounting" parameterType="Long" resultType="Map">
+		select count(*) as candidates,e.examedNum as examedNum,e.passNum as passNum,
+			   e.singleQuestionNum as singleQuestionNum,
+			   e.muiltQuestionNum as muiltQuestionNum,
+			   e.chargeQuestionNum as chargeQuestionNum,
+			   e.fillQuestionNum as fillQuestionNum,
+			   e.shortQuestionNum as shortQuestionNum
+		from student s, exam e
+		where e.id = #{value} and s.subjectId =(select e.subjectId from exam e where e.id = #{value})
+	</select>
+
+	<!-- 根据试卷id拿到对应的试卷 -->
+	<select id="findById" parameterType="Long" resultType="com.ischoolbar.programmer.entity.admin.ExamPaper">
+		select * from examPaper where id = #{id}
+	</select>
+	<!-- 根据试卷id将主观题总分数写入 -->
+	<update id="addSubScoreTotal" parameterType="Map">
+		update examPaper set subScoreTotal = #{subScoreTotal} where id = #{id}
+	</update>
+	<update id="addFinalScore" parameterType="Map">
+		update examPaper set finalScore = #{finalScore} where id = #{id}
+	</update>
+</mapper>
