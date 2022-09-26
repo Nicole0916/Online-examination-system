@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>考生当前考试数据</title>
+    <link rel="icon" href="favicon.ico" type="image/ico">
+    <meta name="keywords" content="LightYear,光年,后台模板,后台管理系统,光年HTML模板">
+    <meta name="description" content="LightYear是一个基于Bootstrap v3.3.7的后台管理系统的HTML模板。">
+    <meta name="author" content="yinqi">
+    <link href="resources/stats/css/bootstrap.min.css" rel="stylesheet">
+    <link href="resources/stats/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="resources/stats/css/style.min.css" rel="stylesheet">
+</head>
+<style>
+    .chart_block{
+        height: 400px;
+    }
+
+</style>
+
+<body>
+<div class="lyear-layout-web">
+    <div class="lyear-layout-container">
+
+
+        <!--页面主要内容-->
+        <main class="lyear-layout-content" style="padding-left: 0px;padding-top: 8px">
+
+            <div class="card-header">
+                <h2>高级软件工程-李小鹏</h2>
+            </div>
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card bg-primary">
+                            <div class="card-body clearfix">
+                                <div class="pull-right">
+                                    <p class="h6 text-white m-t-0">考生偏头次数</p>
+                                    <p class="h3 text-white m-b-0" id="piantou"></p>
+                                </div>
+                                <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i class="mdi mdi-account fa-1-5x"></i></span> </div>
+                                <!--                                <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i class="mdi mdi-currency-cny fa-1-5x"></i></span> </div>-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card bg-danger">
+                            <div class="card-body clearfix">
+                                <div class="pull-right">
+                                    <p class="h6 text-white m-t-0">考生镜头内无人次数</p>
+                                    <p class="h3 text-white m-b-0" id="wuren"></p>
+                                </div>
+                                <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i class="mdi mdi-account fa-1-5x"></i></span> </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card bg-success">
+                            <div class="card-body clearfix">
+                                <div class="pull-right">
+                                    <p class="h6 text-white m-t-0">考生镜头内多人次数</p>
+                                    <p class="h3 text-white m-b-0" id="duoren"></p>
+                                </div>
+                                <!--                                <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i class="mdi mdi-arrow-down-bold fa-1-5x"></i></span> </div>-->
+                                <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i class="mdi mdi-account fa-1-5x"></i></span> </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card bg-purple">
+                            <div class="card-body clearfix">
+                                <div class="pull-right">
+                                    <p class="h6 text-white m-t-0">异常行为合计次数</p>
+                                    <p class="h3 text-white m-b-0" id="total_action"></p>
+                                </div>
+                                <!--                                <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i class="mdi mdi-comment-outline fa-1-5x"></i></span> </div>-->
+                                <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i class="mdi mdi-arrow-down-bold fa-1-5x"></i></span> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>异常行为饼状图</h4>
+                            </div>
+                            <div class="card-body">
+                                <div id="chart1" class="chart_block"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>异常行为雷达图</h4>
+                            </div>
+                            <div class="card-body">
+                                <div id="chart2" class="chart_block"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>异常行为柱状图</h4>
+                            </div>
+                            <div class="card-body">
+                                <div id="chart3" class="chart_block"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>考生答题得分情况</h4>
+                            </div>
+                            <div class="card-body">
+                                <div id="chart4" class="chart_block"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+        <!--End 页面主要内容-->
+    </div>
+</div>
+</body>
+
+<script src="resources/admin/easyui/js/echarts.min.js"></script>
+<script type="text/javascript" src="resources/stats/js/jquery.min.js"></script>
+<script type="text/javascript" src="resources/stats/js/bootstrap.min.js"></script>
+
+<!--图表插件-->
+<script type="text/javascript" src="resources/stats/js/Chart.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function(e) {
+        var piantou=Math.floor(Math.random()*10);
+        var wuren=Math.floor(Math.random()*10);
+        var duoren=Math.floor(Math.random()*10);
+
+        $("#piantou").text(piantou);
+        $("#wuren").text(wuren);
+        $("#duoren").text(duoren);
+        $("#total_action").text(
+            piantou+wuren+duoren
+        );
+
+
+
+        var chartDom = document.getElementById('chart1');
+        var myChart1 = echarts.init(chartDom);
+        var option;
+
+        option = {
+            title: [
+                {
+                    text: '异常行为饼状图'
+                }
+            ],
+            tooltip: {
+                trigger: 'item'
+            },
+            legend: {
+                top: '5%',
+                left: 'center'
+            },
+            series: [
+                {
+                    name: 'Access From',
+                    type: 'pie',
+                    radius: ['40%', '70%'],
+                    avoidLabelOverlap: false,
+                    itemStyle: {
+                        borderRadius: 10,
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    },
+                    label: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        label: {
+                            show: true,
+                            fontSize: '40',
+                            fontWeight: 'bold'
+                        }
+                    },
+                    labelLine: {
+                        show: false
+                    },
+                    data: [
+                        { value: piantou, name: '转头' },
+                        { value: wuren, name: '镜头内无人' },
+                        { value: duoren, name: '镜头内多人' },
+                    ]
+                }
+            ]
+        };
+
+        myChart1.setOption(option);
+
+
+
+        var chartDom = document.getElementById('chart2');
+        var myChart2 = echarts.init(chartDom);
+        var option;
+
+        option = {
+            tooltip: {
+                trigger: 'item'
+            },
+            title: {
+                text: '异常行为雷达图'
+            },
+
+            radar: {
+                // shape: 'circle',
+                indicator: [
+                    { name: '转头', max: 12 },
+                    { name: '镜头内无人', max: 12 },
+                    { name: '镜头内多人', max: 12 },
+                ]
+            },
+            series: [
+                {
+                    name: 'Budget vs spending',
+                    type: 'radar',
+                    data: [
+                        {
+                            value: [piantou, wuren, duoren],
+                            name: 'Allocated Budget'
+                        },
+                    ]
+                }
+            ]
+        };
+        myChart2.setOption(option);
+
+
+        var chartDom = document.getElementById('chart3');
+        var myChart3 = echarts.init(chartDom);
+        var option;
+
+        option = {
+            title: [
+                {
+                    text: '异常行为柱状图'
+                }
+            ],
+            tooltip: {
+                trigger: 'item'
+            },
+            xAxis: {
+                type: 'category',
+                data: ['转头', '镜头内无人', '镜头内多人']
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [
+                {
+                    data: [piantou, wuren, duoren],
+                    type: 'bar',
+                    showBackground: true,
+                    backgroundStyle: {
+                        color: 'rgba(180, 180, 180, 0.2)'
+                    }
+                }
+            ]
+        };
+
+        myChart3.setOption(option);
+
+
+
+        var chartDom = document.getElementById('chart4');
+        var myChart4 = echarts.init(chartDom);
+        var option;
+        option = {
+            title: [
+                {
+                    text: '考生各项得分情况'
+                }
+            ],
+            angleAxis: {},
+            radiusAxis: {
+                type: 'category',
+                data: ['客观题', '主观题','总分'],
+                z: 10
+            },
+
+            color: ["#4aa766"],
+            polar: {},
+            series: [
+                {
+                    type: 'bar',
+                    data: [1, 2, 3],
+                    coordinateSystem: 'polar',
+                    name: 'A',
+                    stack: 'a',
+                    emphasis: {
+                        focus: 'series'
+                    }
+                },
+            ],
+        };
+
+
+        myChart4.setOption(option);
+
+        window.onresize = function(){
+            myChart1.resize();
+            myChart2.resize();
+            myChart3.resize();
+            myChart4.resize();
+        }
+    });
+
+
+</script>
+</body>
+</html>
