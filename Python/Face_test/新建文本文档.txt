@@ -1,0 +1,48 @@
+'''
+实时检测人脸
+'''
+# def real_time_detecte(request):
+def upload(request):
+    fi = FaceImport()
+    body = json.loads(request.body)
+    img_base64 = body["imgData"]
+    img_b64decode = base64.b64decode(img_base64)
+    img_array = np.fromstring(img_b64decode, np.uint8)  # 转换np序列
+    img = cv2.imdecode(img_array, cv2.COLOR_BGR2RGB)
+    dict_a = fi.get_face(img)
+    print(dict_a)
+    # return 1.数据框  2.数据点
+    return HttpResponse('上传到后端')
+
+'''
+获取人脸特征
+
+*****-> 需点击 <-******
+'''
+def get_face_deature(request):
+
+    fi = FaceImport()
+    body = json.loads(request.body)
+    img_base64 = body["imgData"]
+    img_b64decode = base64.b64decode(img_base64)
+    img_array = np.fromstring(img_b64decode, np.uint8)  # 转换np序列
+    img = cv2.imdecode(img_array, cv2.COLOR_BGR2RGB)
+    dict_a = fi.get_img_feature(img)
+    # return 1.是否保存成功 True or False
+    return HttpResponse('上传到后端')
+
+
+'''
+判断是否为人脸
+'''
+def upload_1(request):
+    fi = FaceImport()
+    print("上传到后端")
+    body = json.loads(request.body)
+    img_base64 = body["imgData"]
+    img_b64decode = base64.b64decode(img_base64)
+    img_array = np.fromstring(img_b64decode, np.uint8)  # 转换np序列
+    img = cv2.imdecode(img_array, cv2.COLOR_BGR2RGB)
+    dict_a = fi.cheak_face(img)
+    print(dict_a)
+    return HttpResponse('上传到后端')

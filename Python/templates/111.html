@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>视频监控</title>
+    <link rel="stylesheet" href="../static/css/vid/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/vid/base.css">
+    <link rel="stylesheet" href="../static/css/vid/vid_index.css">
+
+</head>
+<style>
+
+
+        .button_press {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+    .button_press:hover {background-color: #3e8e41}
+
+.button_press:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+.main_canvas{
+
+    border: 1px solid rgb(1,116,183);
+    width: 100%;
+    position: relative;
+    height: 138%;
+    margin: -3px;
+    box-shadow: inset 0px 0px 50px #094494;
+    box-sizing: border-box;
+    border-width: 47px 37px 43px 24px;
+    border-image: url(../static/img/border.png) 50 37 20 132;
+}
+
+
+</style>
+<body>
+
+
+<main class="main">
+    <!--头部-->
+    <header class="heared">
+        <span class="head-logo">前后台通用模板</span>
+        <ul class="head-ul"><li><a href="index.html" class="active-a">首页</a> </li>
+            <li><a href="videlctr.html">视频监控</a> </li>
+            <li><a href="map.html">地图管理</a> </li>
+            <li><a href="static.html">统计分析</a> </li>
+            <li><a href="form.html">表单信息</a> </li>
+            <li><a href="user.html">用户管理</a></li>
+            <li><a href="part.html">部门管理</a></li>
+            <li><a href="date.html">日程管理</a></li>
+
+        </ul>
+        <div class="head-right"><span id="time"></span><span>Admin</span></div>
+    </header>
+    <!--身体-->
+    <section class="section commanBox">
+        <img id="img1">
+    </section>
+
+</main>
+
+
+<script src="../static/js/vid/jquery.js"></script>
+<script src="../static/js/vid/vid_index.js"></script>
+
+ <script>
+        $.ajaxSetup({
+            data:{csrfmiddlewaretoken:'{{ csrf_token }}'}
+        })
+ </script>
+<script>
+    function a(){
+        for(i=0;i<100;i++){
+            console.log(i)
+            a = document.getElementById("img1")
+            setTimeout(function (){a.src="../static/ynu.jpg"+"?tempid="+Math.random()},1000)
+        }
+
+    }
+    a()
+</script>
+
+
+
+</body>
+</html>
